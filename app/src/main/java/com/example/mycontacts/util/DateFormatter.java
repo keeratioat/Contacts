@@ -1,4 +1,5 @@
 package com.example.mycontacts.util;
+
 import android.util.Log;
 
 import java.text.ParseException;
@@ -17,7 +18,6 @@ public class DateFormatter {
         mDateFormatter = new SimpleDateFormat(STORED_DATE_FORMAT, Locale.US);
     }
 
-    // จัดรูปแบบวันที่ สำหรับเก็บลง database
     public String formatDate(Date date) {
         return mDateFormatter.format(date);
     }
@@ -34,13 +34,14 @@ public class DateFormatter {
     }
 
     // จัดรูปแบบวันที่ สำหรับแสดงผลบนหน้าจอ
-    public static String formatForUi(Date date) {
+    public static String formatDateForUi(Date date) {
+        assert date != null;
 
         SimpleDateFormat monthFormatter = new SimpleDateFormat("MM", Locale.US);
         String month = monthFormatter.format(date);
 
         SimpleDateFormat yearFormatter = new SimpleDateFormat("yyyy", Locale.US);
-//String yearInBe = String.valueOf(Integer.valueOf(yearFormatter.format(date)));
+        //String yearInBe = String.valueOf(Integer.valueOf(yearFormatter.format(date)));
         String yearInBe = String.valueOf(Integer.parseInt(yearFormatter.format(date)) + 543);
 
         SimpleDateFormat dayFormatter = new SimpleDateFormat("dd", Locale.US);
@@ -53,12 +54,29 @@ public class DateFormatter {
         );
     }
 
-    public static String formatForUiShortYear(Date date) {
+    // จัดรูปแบบเวลา สำหรับแสดงผลบนหน้าจอ
+    public static String formatTimeForUi(Date date) {
+        assert date != null;
+
+        SimpleDateFormat hourFormatter = new SimpleDateFormat("HH", Locale.US);
+        String hour = hourFormatter.format(date);
+
+        SimpleDateFormat minuteFormatter = new SimpleDateFormat("mm", Locale.US);
+        String minute = minuteFormatter.format(date);
+
+        return String.format(
+                Locale.getDefault(),
+                "%s:%s",
+                hour, minute
+        );
+    }
+
+    public static String formatDateForUiShortYear(Date date) {
         SimpleDateFormat monthFormatter = new SimpleDateFormat("MM", Locale.US);
         String month = monthFormatter.format(date);
 
         SimpleDateFormat yearFormatter = new SimpleDateFormat("yyyy", Locale.US);
-//String yearInBe = String.valueOf(Integer.valueOf(yearFormatter.format(date)));
+        //String yearInBe = String.valueOf(Integer.valueOf(yearFormatter.format(date)));
         String yearInBe = String.valueOf(Integer.parseInt(yearFormatter.format(date)) + 543).substring(2);
 
         SimpleDateFormat dayFormatter = new SimpleDateFormat("dd", Locale.US);

@@ -37,7 +37,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         User user =  mUser[position];
         holder.fullNameTextView.setText(user.firstName + " " + user.lastName);
-        holder.brithDateTextView.setText(DateFormatter.formatForUi(user.brithDate));
+        holder.brithDateTextView.setText(DateFormatter.formatDateForUi(user.brithDate));
                 /*if(user.singel){
             holder.singleTextView.setBackgroundColor(Color.RED);
 

@@ -40,12 +40,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="วันเกิด"
-        app:layout_constraintBottom_toTopOf="@+id/male_radio_button"
+        android:hint="เลือกวันเกิด"
+        app:layout_constraintBottom_toTopOf="@+id/some_time_edit_text"
         app:layout_constraintEnd_toEndOf="@+id/last_name_edit_text"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/last_name_edit_text"
         app:layout_constraintTop_toBottomOf="@+id/last_name_edit_text" />
+
+    <EditText
+        android:id="@+id/some_time_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="เลือก some time"
+        app:layout_constraintBottom_toTopOf="@+id/male_radio_button"
+        app:layout_constraintEnd_toEndOf="@+id/birth_date_edit_text"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/birth_date_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/birth_date_edit_text" />
 
     <RadioButton
         android:id="@+id/male_radio_button"
@@ -60,7 +73,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birth_date_edit_text" />
+        app:layout_constraintTop_toBottomOf="@+id/some_time_edit_text" />
 
     <RadioButton
         android:id="@+id/female_radio_button"
@@ -88,7 +101,7 @@
         android:id="@+id/save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="save"
+        android:text="บันทึก"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/birth_date_edit_text"
         app:layout_constraintStart_toStartOf="@+id/birth_date_edit_text"
